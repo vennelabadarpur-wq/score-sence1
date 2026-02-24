@@ -4,7 +4,7 @@ import pickle
 app = Flask(__name__)
 
 # Load your trained Random Forest model
-model = pickle.load(open("teja.pkl", "rb"))
+model = pickle.load(open("teja.pkl", "wb"))
 
 @app.route("/")
 def home():
@@ -28,3 +28,4 @@ import os
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
