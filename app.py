@@ -24,5 +24,7 @@ def predict():
     # Round to 2 decimals
     return render_template("index.html", result=round(prediction[0], 2))
 
-if _name_ == "_main_":
-    app.run(debug=True)
+import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
